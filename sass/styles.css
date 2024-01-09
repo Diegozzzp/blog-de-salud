@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-style: helvetica;
+}
+
+.barra-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.nav-contenedor {
+  display: flex;
+  justify-content: none;
+  align-items: center;
+  background-color: #056A9E;
+  width: 80vw;
+  height: 12vh;
+  border-radius: 10px;
+  padding: 0px 15px;
+}
+
+a {
+  color: white;
+}
+
+ul {
+  display: flex;
+  gap: 30px;
+}
+
+li {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 90%;
+  align-content: center;
+  justify-items: center;
+  padding: 0 60px 0 60px;
+}
+
+.articulo img {
+  width: 400px;
+  height: 200px;
+}
+
+/*  Extra small devices (phones, 600px and down)  */
+@media only screen and (max-width: 600px) {
+  .columnas-contenido {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+/*  Small devices (portrait tablets and large phones, 600px and up)  */
+/*  Medium devices (landscape tablets, 768px and up)  */
+@media only screen and (max-width: 768px) {
+  .cajitas-nav ul li {
+    display: none;
+  }
+  .columnas-contenido {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
+    justify-items: center;
+  }
+}
+/*  Large devices (laptops/desktops, 992px and up)  */
+/*  Extra large devices (large laptops and desktops, 1200px and up) *//*# sourceMappingURL=styles.css.map */
