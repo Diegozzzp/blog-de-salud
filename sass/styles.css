@@ -9,7 +9,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 30;
 }
 
 .nav-contenedor {
@@ -18,13 +21,21 @@
   align-items: center;
   background-color: #056A9E;
   width: 80vw;
-  height: 10vh;
+  height: 8vh;
   border-radius: 10px;
   padding: 0px 15px;
+  z-index: 30;
+}
+
+.cajitas-nav li img {
+  margin: 0 0 0 100px;
 }
 
 a {
   color: white;
+}
+a:hover {
+  color: #212121;
 }
 
 ul {
@@ -39,10 +50,84 @@ li {
   list-style-type: none;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: #0e0e0e;
+  flex-direction: column;
+  padding: 80px 0 0 0;
+}
+
+.logo {
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.social-icons-container, .footer-menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  border: 1px solid #f2f2f2;
+}
+
+.social-icon:hover {
+  background-color: #121212;
+  filter: invert(1);
+}
+
+.footer-menu-container {
+  list-style-type: none;
+  color: #f2f2f2;
+  font-size: 18px;
+}
+
+.menu-item {
+  margin: 1rem 1.5rem;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.menu-item:hover {
+  opacity: 1;
+}
+
+.copyright {
+  color: #f2f2f2;
+  opacity: 0.3;
+  text-align: center;
+}
+
+i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  z-index: 10;
+  color: white;
+  font-size: 1.4rem;
+}
+
+i .ri {
+  color: white;
+}
+
 .titulo-principal {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
 }
 
 section {
@@ -51,12 +136,12 @@ section {
   justify-content: center;
   align-items: center;
   gap: 4px;
-  padding: 0 0 35px;
+  padding: 40px 0 35px;
 }
 
-.articulo img {
+.noticias-destacadas img {
   width: 400px;
-  height: 200px;
+  height: 250px;
 }
 
 .banner-doctores {
@@ -65,12 +150,13 @@ section {
   height: 125px;
 }
 
-h2, p {
+.banner-doctores h2, p {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   text-align: center;
+  color: #fff;
 }
 
 hr {
@@ -81,18 +167,103 @@ hr {
   margin: 0 0 0 47%;
 }
 
+main h2 {
+  color: rgb(51, 51, 51);
+}
+
+.titulo-seccion {
+  padding: 80px 0 0 85px;
+  text-transform: uppercase;
+}
+
+.recomendaciones-saludables-col3 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0;
+  grid-row-gap: 40px;
+  padding: 45px 0 0 0;
+}
+
+.articulo2 {
+  height: 200px;
+}
+
+.texto-articulo h3 {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  width: 345px;
+  z-index: 30;
+  cursor: pointer;
+}
+
+.publicidad {
+  grid-column: 4;
+  grid-row: 1/4;
+  cursor: pointer;
+}
+
+.texto-noticias h3 {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  width: 345px;
+  z-index: 30;
+  cursor: pointer;
+}
+
+img {
+  cursor: pointer;
+}
+
 /*  Extra small devices (phones, 600px and down)  */
+@media only screen and (max-width: 600px) {
+  .recomendaciones-saludables-col3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .publicidad {
+    grid-column: 1;
+    grid-row: 10/12;
+  }
+}
 /*  Small devices (portrait tablets and large phones, 600px and up)  */
-/*  Medium devices (landscape tablets, 768px and up)  */
+@media only screen and (min-width: 600px) {
+  .recomendaciones-saludables-col3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .publicidad {
+    grid-column: 2;
+    grid-row: 1/9;
+  }
+}
+/*  Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-  .cajitas-nav ul li {
+  .cajitas-nav ul {
     display: none;
   }
 }
-/*  Large devices (laptops/desktops, 992px and up)  */
+/*  Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .cajitas-nav a i {
-    display: none;
+  .recomendaciones-saludables-col3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .publicidad {
+    grid-column: 3;
+    grid-row: 1/7;
   }
 }
-/*  Extra large devices (large laptops and desktops, 1200px and up) *//*# sourceMappingURL=styles.css.map */
+/*  Extra large devices (large laptops and desktops, 1200px and up)  */
+@media only screen and (min-width: 1200px) {
+  .recomendaciones-saludables-col3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .publicidad {
+    grid-column: 4;
+    grid-row: 1/6;
+  }
+}/*# sourceMappingURL=styles.css.map */

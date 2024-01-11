@@ -4,12 +4,20 @@
     text-decoration: none
     font-family: Arial, Helvetica, sans-serif
 
+$color-textos: #fff
+
 @import ./components/_mixin
 
 @import ./components/_nav
 
+@import ./components/_responsive
+
+@import ./components/_footer
+
+
 .titulo-principal
     @include display-centrar(flex, center , center , )
+    font-weight: bold
 
 section
     display: flex
@@ -17,11 +25,12 @@ section
     justify-content: center
     align-items: center
     gap: 4px
-    padding: 0 0 35px
-   
-.articulo img
+    padding: 40px 0 35px
+
+.noticias-destacadas img
     width: 400px
-    height: 200px
+    height: 250px
+
 
 .banner-doctores
     background-image: url("banner_saludable.png")
@@ -29,17 +38,48 @@ section
     height: 125px
     
 
-h2, p
+.banner-doctores h2, p
     @include display-centrar(flex , center , center )
     padding: 20px
     text-align: center
+    color: $color-textos
+    
 
 hr
     text-align: center
     width: 70px
     height: 6px
-    background-color: #fff
+    background-color: $color-textos
     margin: 0 0 0 47%
+
+main h2
+    color: rgb(51,51,51)
+
+.titulo-seccion
+    padding: 80px 0 0 85px
+    text-transform: uppercase
+
+.recomendaciones-saludables-col3
+    @include columnas-grid()
+    padding: 45px 0 0 0
+
+.articulo2
+    height: 200px
+
+.texto-articulo h3
+    @include config-h3
+    
+.publicidad
+    grid-column: 4
+    grid-row: 1/4
+    cursor: pointer
+
+   
+.texto-noticias h3
+    @include config-h3
+  
+img
+    cursor: pointer
 
 
 
@@ -47,46 +87,68 @@ hr
 
 /* 
     Extra small devices (phones, 600px and down) 
-
 @media only screen and (max-width: 600px) 
+    .recomendaciones-saludables-col3
+        display: grid
+        grid-template-columns: 1fr
+        justify-items: center
+        
+    .publicidad
+        grid-column: 1
+        grid-row: 10/12
 
- 
-   
-   
+
+
 /* 
     Small devices (portrait tablets and large phones, 600px and up) 
-
 @media only screen and (min-width: 600px) 
-       
- 
+    .recomendaciones-saludables-col3
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+
+    .publicidad
+        grid-column: 2
+        grid-row: 1/9
 
 
+  
 /* 
-    Medium devices (landscape tablets, 768px and up) 
-
+    Medium devices (landscape tablets, 768px and up)
 @media only screen and (max-width: 768px) 
- .cajitas-nav ul li
-         display: none
-
-
-
-/* 
-    Large devices (laptops/desktops, 992px and up) 
-
-@media only screen and (min-width: 992px)
-    .cajitas-nav a i
+    .cajitas-nav ul
         display: none
-        
-   
 
+    
 
+    
 
-
+  
 
 /* 
-    Extra large devices (large laptops and desktops, 1200px and up)
+    Large devices (laptops/desktops, 992px and up)
+@media only screen and (min-width: 992px) 
+    .recomendaciones-saludables-col3
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
 
+    .publicidad
+        grid-column: 3
+        grid-row: 1/7
+  
+
+   
+    
+/* 
+    Extra large devices (large laptops and desktops, 1200px and up) 
 @media only screen and (min-width: 1200px) 
+    .recomendaciones-saludables-col3
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
 
+    .publicidad
+        grid-column: 4
+        grid-row: 1/6
 
+    
+ 
 

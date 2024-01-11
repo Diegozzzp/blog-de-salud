@@ -3,3 +3,27 @@
     display: $display
     justify-content: $content
     align-items: $items
+
+@mixin columnas-grid()
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 0
+    grid-row-gap: 40px
+    
+
+@mixin espaciado  
+    width: 280px
+    height: 185px
+
+@mixin config-h3
+    font-size: 16px
+    line-height: 22px
+    font-weight: 600
+    width: 345px
+    z-index: 30
+    cursor: pointer
+
+@mixin flex-centro()
+    display: flex
+    justify-content: center
+    align-items: center
